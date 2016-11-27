@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 from matplotlib import style
 import datetime,arrow
 import time
+import pickle
 
 style.use('ggplot')
 
@@ -38,14 +39,19 @@ X = X[:-forecast_out]
 
 df.dropna(inplace=True)
 
-y = np.array(df['label'])
 y = np.array(df['label'])  #labels
 
-X_train,X_test,y_train,y_test = cross_validation.train_test_split(X,y,test_size = 0.2)
+X_train,X_test,y_train,y_test = cross_validation.train_test_split(X,y,test_size = 0.2) 
 
 clf = LinearRegression(n_jobs=-1) #classifier
 #clf = svm.SVR()
 clf.fit(X_train,y_train)
+#creating a pickle To store the clasifier
+with open('linearregression.pickle','wb') as f:
+     pickle.dump(clf,f)
+
+pickle_in = open('linearregression.pickle','rb')
+clf = pickle.load(pickle_in)
 
 accuracy = clf.score(X_test,y_test) #calculations
 

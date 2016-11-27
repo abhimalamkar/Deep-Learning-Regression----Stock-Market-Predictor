@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>e6bdb889-73a2-4872-a273-04b9ecf58576</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Regression.py</StartupFile>
+    <StartupFile>AlgorithmLinearRegression.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AlgorithmLinearRegression.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Regression.py" />
   </ItemGroup>
   <PropertyGroup>
