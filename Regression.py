@@ -18,7 +18,8 @@ df = df[['Adj. Open','Adj. High','Adj. Low','Adj. Close','Adj. Volume']]
 #creating a new column with specific calcuations
 df['HL_PCT'] = (df['Adj. High'] - df['Adj. Close'] )/ df['Adj. Close']*100
 df['PCT_CHANGE'] = (df['Adj. Close'] - df['Adj. Open'] )/ df['Adj. Open']*100
-#Setting Values
+
+#Setting Values  price  X         X             X
 df = df[['Adj. Close','HL_PCT','PCT_CHANGE','Adj. Volume']] #features
 
 #variable
@@ -27,12 +28,12 @@ forecast_col = 'Adj. Close'
 df.fillna(-99999,inplace=True)
 
 #predict 10% of data set
-forecast_out = int(math.ceil(0.01*len(df)))
+forecast_out = int(math.ceil(0.1*len(df)))
 print(forecast_out)
 
 df['label'] = df[forecast_col].shift(-forecast_out)
 
-X = np.array(df.drop(['label'],1)) #features
+X = np.array(df.drop(['label','Adj. Close'],1)) #features
 X = preprocessing.scale(X)
 X_lately = X[-forecast_out:]
 X = X[:-forecast_out]
