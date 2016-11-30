@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>e6bdb889-73a2-4872-a273-04b9ecf58576</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>K_Nearest_Neighbors.py</StartupFile>
+    <StartupFile>NeralNet.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -26,6 +26,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="K_Nearest_Neighbors.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NeralNet.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Regression.py" />

@@ -1,3 +1,5 @@
-score,school,pass
-1,2,1
+id,score,school,pass
+1,1,2,1
+2,2,?,5
+
 
